@@ -56,6 +56,11 @@ router.post('/:ns/:deploy', function (req, res) {
 
 app.use(router)
 
-app.listen(3000, function () {
+var server = app.listen(3000, function () {
   console.log('App listening on port 3000')
+})
+
+
+process.on('SIGINT', function(){
+  server.close()
 })
