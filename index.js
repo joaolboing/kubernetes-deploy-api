@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const { deploy } = require("./lib/deploy");
 const { deleteHost } = require("./lib/host");
 const app = new express();
