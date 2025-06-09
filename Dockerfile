@@ -10,7 +10,8 @@ WORKDIR /app
 
 FROM base AS prod
 
+COPY package.json yarn.lock /app/
+RUN yarn install --frozen-lockfile --production
 ADD . /app
-RUN npm install --production
 
 CMD ["node","/app/index.js"]
