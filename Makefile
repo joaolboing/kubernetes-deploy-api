@@ -1,5 +1,6 @@
 IMAGE=docker.conectra.com.br/conectra/kubernetes-deploy-api:latest
 
+.PHONY: build deploy
 
 build:
 	docker build --rm -t $(IMAGE) .
