@@ -25,6 +25,7 @@ router.use(function (req, res, nxt) {
 
 router.post("/host/delete", deleteHost);
 router.post("/:ns/:deploy", deploy);
+router.post("/:ns/:deploy/scale", require("./lib/scale").scale);
 
 app.use(router);
 
