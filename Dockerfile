@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:22.16.0-alpine AS base
 
 RUN apk add curl --no-cache
 
@@ -8,6 +8,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 WORKDIR /app
 
+FROM base AS prod
 
 ADD . /app
 RUN npm install --production
